@@ -1,169 +1,347 @@
-header{
-    width:100%;
-    background: rgb(247, 247, 249);
-    height: 100px;
-    background:rgb(248, 248, 249) no-repeat 5% 50%;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.logo
-{
-    margin-left: 30px;
-    margin-top: 7px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #F5F5DC; /* Бежевый фон вместо белого */
+        }
 
-main{
-    text-align: center;
-}
-a{
-    text-decoration: none;
-}
-li{
-    list-style-type:none;
-}
-ul
-{
-    text-decoration: none;
-}
-ol{
-    text-decoration: none;
-}
-.title{
-	font-size: 36px;
-	padding-top: 25px;
-	text-align: center;
-}
-.menu{
-	list-style: none;
-	position: absolute;
-	top: 10px;
-	right: 120px;
-}
-.knopki{
-    font-size: 15px;
-    position: absolute;
-    top:10px;
-    right: 50px;
-    line-height: 22px;
-}
+        .container {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-.table-container{
-    display: flex;
-    justify-content: center;
-}
+        /* Mobile First Styles */
 
-.table-small{
-    display: flex;
-    justify-content: center;
-}
+        /* Header */
+        #header {
+            background-color: #8B4513;
+            width: 100%;
+            padding: 10px 0;
+        }
 
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
 
+        .logo {
+            width: 200px;
+            height: 100px;
+            object-fit: contain;
+        }
 
-table {
-    margin-left: 37px;
-    text-align: center;
-    border: 1px solid grey;
-    width: 15%;
-    height: 15%;
-}
-th {
-    border: 1px solid grey;
-}
-td {
-    border: 1px solid grey;
- }
- figure{
-    position: absolute;
-    top:-8px;
-    left:-31px;
-}
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    row-gap: 27px;
-    color: #efefef;
-    height:200px ;
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+        }
 
-    background:rgb(233, 42, 207);
-    
-    }
-    
-    
-    
-    .footer__vrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        column-gap: 30px;
-        margin-top: 60px;
-    
-     
-        
-    }
-    
-    .footer__text{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    
-    
-    .footer-text__element{
-        color: var(--header-text);
-        font-size: 16px;
-    
-    }
+        /* Navigation */
+        #navigation {
+            background-color: #A0522D;
+            width: 100%;
+            padding: 10px 0;
+        }
 
-.knopki { 
-    display: flex; 
-    flex-direction: row; 
-    list-style: none; 
-    margin: 0; 
-    padding: 0; 
-} 
-.knopki-item { 
-    flex: 1; 
-    text-align: center; 
-} 
-  
-@media (max-width: 768px) { 
-    .knopki { 
-       flex-direction: column; 
-    } 
-    .knopki-item { 
-       flex: none; 
-       width: 100%; 
-       line-height: 1;
-    } 
-}
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
+        .nav-menu li {
+            text-align: center;
+        }
 
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
 
-.container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.table-small {
-    display: none;
-}
+        .nav-menu a:hover {
+            color: #D2B48C;
+        }
 
+        /* Main Content */
+        #main-content {
+            padding: 20px 0;
+        }
 
-@media (max-width: 768px) {
-    .table-large {
-        display: none;
-    }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-    .table-small {
-        display: flex;
-    }
-}
+        /* Mobile order: Table first, then links */
+        .table-section {
+            order: -1;
+        }
+
+        .links-section {
+            order: 0;
+        }
+
+        .form-section {
+            order: 1;
+        }
+
+        /* Sections */
+        .links-section,
+        .table-section,
+        .form-section {
+            background-color: #D2B48C;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .links-section h2,
+        .table-section h2,
+        .form-section h2 {
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        /* Links List */
+        .links-list {
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        .links-list a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .links-list a:hover {
+            color: #8B4513;
+        }
+
+        .links-list ol {
+            margin-left: 20px;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .data-table th {
+            background-color: #8B4513;
+            color: white;
+            font-weight: bold;
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background-color: #DEB887;
+        }
+
+        .data-table tbody tr:nth-child(odd) {
+            background-color: #D2B48C;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"],
+        .form-group input[type="email"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #FFF8DC; /* Бежевый фон для полей ввода */
+        }
+
+        .form-group fieldset {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #FFF8DC; /* Бежевый фон для fieldset */
+        }
+
+        .form-group fieldset legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        .form-group label input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .submit-btn {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #654321;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #A0522D;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Tablet and Desktop Styles */
+        @media (min-width: 768px) {
+            /* Header */
+            .header-content {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .site-title {
+                margin-left: 20px;
+                font-size: 2rem;
+            }
+
+            /* Navigation */
+            .nav-menu {
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 30px;
+            }
+
+            .nav-menu a {
+                padding: 8px 15px;
+            }
+
+            /* Content order for desktop */
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .table-section {
+                order: 0;
+            }
+            
+            .links-section {
+                order: -1;
+            }
+            
+            .form-section {
+                order: 1;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0;
+            }
+            
+            .header-content {
+                padding: 10px 0;
+            }
+            
+            /* Navigation positioning for desktop */
+            #navigation .container {
+                display: flex;
+                justify-content: flex-end;
+            }
+            
+            .nav-menu {
+                gap: 40px;
+            }
+        }
+
+        /* Checkbox group styles */
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            font-weight: normal;
+            cursor: pointer;
+            background-color: #FFF8DC; /* Бежевый фон для чекбокса согласия */
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        /* Responsive checkbox group */
+        @media (min-width: 768px) {
+            .checkbox-group {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }

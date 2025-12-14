@@ -1,215 +1,415 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <link rel="icon" href="https://img.icons8.com/color/96/000000/crab.png" type="image/x-icon">
     <meta charset="UTF-8">
+    <!-- Важный тег для адаптивности: обеспечивает правильный масштаб на мобильных устройствах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клеш Рояль | Весёлая Ферма</title>
+    
+    <!-- Подключение шрифтов Google Fonts для красивого отображения текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Библиотека иконок Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Наш единственный и главный файл стилей -->
     <link rel="stylesheet" href="style.css">
-    <title>Apple Store</title>
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="https://upload.wikimedia.org/wikipedia/kk/thumb/3/36/Paris_Saint-Germain_F.C.png/500px-Paris_Saint-Germain_F.C.png" alt="PSG Logo" class="logo" />
-                <div class="site-title">Домашняя работа номер 3</div>
+    <!-- ========== HEADER / ШАПКА САЙТА ========== -->
+    <header>
+        <!-- Контейнер для фонового видео -->
+        <div class="video-container">
+            <!-- Видео автоматически воспроизводится, без звука, зациклено -->
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <!-- Полупрозрачный тёмный оверлей для лучшей читаемости текста поверх видео -->
+            <div class="overlay"></div>
+        </div>
+        
+        <!-- Основная навигация сайта -->
+        <nav>
+            <a href="#" class="logo"><i class="fas fa-crow"></i> Клеш<span>Рояль</span></a>
+            <!-- Список ссылок для десктопного меню -->
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Главная</a></li>
+                <li class="dropdown">
+                    <a href="#products"><i class="fas fa-carrot"></i> Урожай</a>
+                    <!-- Вложенное подменю, появляется при наведении -->
+                    <ul class="dropdown-menu">
+                        <li><a href="#products">Овощи</a></li>
+                        <li><a href="#products">Фрукты</a></li>
+                        <li><a href="#products">Молочко</a></li>
+                        <li><a href="#products">Яйца</a></li>
+                    </ul>
+                </li>
+                <li><a href="#calculator"><i class="fas fa-calculator"></i> Калькулятор</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Галерея</a></li>
+                <li><a href="#contact"><i class="fas fa-address-book"></i> Контакты</a></li>
+                <!-- Кнопка для открытия модального окна с формой -->
+                <li><a href="#" id="contact-btn" class="btn"><i class="fas fa-comment-dots"></i> Связь с нами</a></li>
+            </ul>
+            <!-- "Бургер" - кнопка для открытия меню на мобильных устройствах -->
+            <div class="burger" id="burgerBtn">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
+        </nav>
+        
+        <!-- Герой-секция с главным заголовком и призывом к действию -->
+        <div class="hero">
+            <h1>Весёлая Ферма "Клеш Рояль"</h1>
+            <p>Самые весёлые овощи и самые счастливые животные! Натуральные продукты от "звёзд" фермы.</p>
+            <a href="#products" class="btn">Выбрать урожай</a>
         </div>
     </header>
 
-    <nav id="navigation">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="#">Я</a></li>
-                <li><a href="#">Хочу</a></li>
-                <li><a href="#">Спать</a></li>
-            </ul>
+    <!-- ========== SECTION: НАША ПРОДУКЦИЯ ========== -->
+    <section id="products" class="section">
+        <div class="section-title">
+            <h2>Наш звёздный урожай</h2>
+            <p>Выберите самые свежие и натуральные продукты с нашей фермы</p>
         </div>
-    </nav>
-
-    <main id="main-content">
-        <div class="container">
-            <div class="content-wrapper">
-                <section class="links-section" id="links">
-                    <h2>Ссылки</h2>
-                    <ul class="links-list">
-                        <li><a href="http://kubsu.ru">Сайт КубГУ</a></li>
-                        <li><a href="https://kubsu.ru">Сайт КубГУ 2.0</a></li>
-                        <li>
-                            <a href="https://rutube.ru/">
-                                <img src="https://avatars.mds.yandex.net/i?id=d619edf8f4dfa225b65228e60debef21_l-5222505-images-thumbs&n=13" width="300" alt="Link image">
-                            </a>
-                        </li>
-                        <li><a href="krich1.html">Сокращенная ссылка на внутреннюю страницу</a></li>
-                        <li><a href="krich.html">Сокращенная ссылка на главную страницу</a></li>
-                        <li><a href="#a1">Ссылка на фрагмент</a></li>
-                        <li><a href="https://www.dota2.com/home?size=500&color=pink&width=500">Ссылка c 3 параметрами URL</a></li>
-                        <li><a href="https://moodle.kubsu.ru/course/view.php?id=780">Cсылка с параметром id в URL</a></li>
-                        <li><a href="page.html">Относительная на страницу в текущем каталоге</a></li>
-                        <li><a href="https://about.google/">Относительная на страницу в каталоге about</a></li>
-                        <li><a href="../">Относительная на страницу в каталоге уровнем выше текущего</a></li>
-                        <li><a href="/../../">Относительная на страницу в каталоге двумя уровнями выше текущего</a></li>
-                        <li>Контекстная ссылка в <a href="#">тексте</a> абзаца</li>
-                        <li><a href="https://max.ru/?ysclid=mfmx7x45ks578217796#:~:text=%D0%9C%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D1%83%D0%BC%0A%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B5%D0%B9%0A%D0%B4%D0%BB%D1%8F,%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0">Cсылка на фрагмент страницы стороннего сайта</a></li>
-                        <li>
-                            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/04/Split-image-of-Squidward-SpongeBob-and-Mr-Krabs-from-SpongeBob-Squarepants.jpg" width="411" height="146" usemap="#map" alt="Link image">
-                            <map name="map">
-                                <area shape="rect" alt="SpongeBob" coords="18,50,138,160" href="https://spongebob.fandom.com/wiki/SpongeBob_SquarePants">
-                                <area shape="rect" alt="Patrick" coords="140,50,255,165" href="https://spongebob.fandom.com/wiki/Patrick_Star">
-                                <area shape="circle" alt="Squidward" coords="319,150,100" href="https://spongebob.fandom.com/wiki/Squidward_Tentacles">
-                            </map>
-                        </li>
-                        <li><a href="">Ссылка с пустым href</a></li>
-                        <li><a>http://kubsu.ru</a></li>
-                        <li><a href="http://" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
-                        <li><a href="http://" rel="noindex">Ссылка, по которой запрещен переход поисковикам</a></li>
-                        <li>
-                            <ol>
-                                <li><a href="https://spongebob.fandom.com/wiki/SpongeBob_SquarePants">SpongeBob</a></li>
-                                <li><a href="https://spongebob.fandom.com/wiki/Patrick_Star">Patrick</a></li>
-                                <li><a href="https://spongebob.fandom.com/wiki/Squidward_Tentacles">Squidward</a></li>
-                            </ol>
-                        </li>
-                        <li><a href="ftp://user:lover@site.ru/Comp/file.txt">FTP ссылка</a></li>
-                    </ul>
-                </section>
-                              <section class="table-section" id="table">
-                    <h2>Таблица</h2>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Колонка 1</th>
-                                <th>Колонка 2</th>
-                                <th>Колонка 3</th>
-                                <th>Колонка 4</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="2">Объединенные ячейки 1-2</td>
-                                <td>Ячейка 1.3</td>
-                                <td>Ячейка 1.4</td>
-                            </tr>
-                            <tr>
-                                <td>Ячейка 2.1</td>
-                                <td>Ячейка 2.2</td>
-                                <td>Ячейка 2.3</td>
-                                <td>Ячейка 2.4</td>
-                            </tr>
-                            <tr>
-                                <td>Ячейка 3.1</td>
-                                <td>Ячейка 3.2</td>
-                                <td>Ячейка 3.3</td>
-                                <td>Ячейка 3.4</td>
-                            </tr>
-                            <tr>
-                                <td>Ячейка 4.1</td>
-                                <td colspan="2">Объединенные ячейки 4.2-4.3</td>
-                                <td>Ячейка 4.4</td>
-                            </tr>
-                            <tr>
-                                <td>Ячейка 5.1</td>
-                                <td>Ячейка 5.2</td>
-                                <td>Ячейка 5.3</td>
-                                <td>Ячейка 5.4</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4">Объединенные все ячейки строки 6</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <section class="table-section" id="table">
-                    <h2>Форма</h2>
-                    <form action="" method="get">
-                        <div class="form-group">
-                            <label for="name">Введите ФИО:</label>
-                            <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" 
-                                   oninput="this.value=this.value.replace(/[^a-zA-Zа-яА-Я\s]/g,'')" required>
+        
+        <div class="models-grid">
+            <!-- Карточка товара 1 -->
+            <div class="model-card">
+                <div class="model-img">
+                    <!-- Изображение будет меняться при выборе цвета через data-color на кнопках ниже -->
+                    <img src="https://avatars.mds.yandex.net/i?id=262fce599ffaab67a84dcbdb7d5d8ba920b6efd7-4080301-images-thumbs&n=13" alt="Овощи" id="product-1-img">
+                </div>
+                <div class="model-info">
+                    <h3>Овощной батальон</h3>
+                    <p>Хрустящие огурцы, упругие помидоры и морковь с характером. Собраны сегодня утром!</p>
+                    <div class="model-price">от 150 ₽/кг</div>
+                    
+                    <!-- Блок выбора "цвета" (типа овоща) -->
+                    <div class="color-picker">
+                        <h4>Выберите отряд:</h4>
+                        <div class="color-options">
+                            <!-- При клике на кнопку срабатывает JavaScript, меняющий основное изображение -->
+                            <div class="color-option active" style="background-color: #ff6b6b;" data-img="https://vesti-k.ru/i/80/80a6d494f81fd30c3c681227854f551b.jpg" data-product="1" title="Помидоры"></div>
+                            <div class="color-option" style="background-color: #4caf50;" data-img="https://avatars.mds.yandex.net/i?id=41e8488b1eefc56a5d0e2aa3ffcd6b37_l-5278475-images-thumbs&n=13" data-product="1" title="Огурцы"></div>
+                            <div class="color-option" style="background-color: #ff9800;" data-img="https://main-cdn.sbermegamarket.ru/big2/hlr-system/115/665/071/710/252/157/100029493743b1.jpg" data-product="1" title="Морковь"></div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="tel">Введите номер телефона:</label>
-                            <input type="tel" name="tel" id="tel" placeholder="+7(...)...-..-.." 
-                                   pattern="[0-9]{10}" minlength="10" maxlength="10"
-                                   oninput="this.value=this.value.replace(/\D/g,'').substring(0,10)" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карточка товара 2 (аналогичная структура) -->
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://static.mk.ru/upload/entities/2024/11/25/09/articles/facebookPicture/72/b3/63/73/11b4f3ffd24d2a3e9764a41f1cfd6640.jpg" alt="Фрукты" id="product-2-img">
+                </div>
+                <div class="model-info">
+                    <h3>Фруктовая аристократия</h3>
+                    <p>Яблоки в мундирах, клубника с королевским титулом и малина с наградой.</p>
+                    <div class="model-price">от 300 ₽/кг</div>
+                    <div class="color-picker">
+                        <h4>Выберите двор:</h4>
+                        <div class="color-options">
+                            <div class="color-option active" style="background-color: #e91e63;" data-img="https://gov.khogov.ru/wp-content/uploads/sites/4/2025/05/photo_2025-05-20_17-49-38-1024x576.jpg" data-product="2" title="Клубника"></div>
+                            <div class="color-option" style="background-color: #8bc34a;" data-img="https://avatars.mds.yandex.net/i?id=edd7d680376976f9e9b55c15147e22be_l-9700546-images-thumbs&n=13" data-product="2" title="Яблоки"></div>
+                            <div class="color-option" style="background-color: #9c27b0;" data-img="https://avatars.mds.yandex.net/i?id=396f86ddb2b0828522672795d335eacf_l-4445663-images-thumbs&n=13" data-product="2" title="Малина"></div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email">Введите email:</label>
-                            <input type="email" id="email" name="email" placeholder="name@mail.ru" required>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карточка товара 3 (аналогичная структура) -->
+            <div class="model-card">
+                <div class="model-img">
+                    <img src="https://edaprof.ru/image/catalog/statii/tekhnologiya-proizvodstva-moloka-i-molochnoj-produkcii/moloko.jpg" alt="Молочное" id="product-3-img">
+                </div>
+                <div class="model-info">
+                    <h3>Молочные рыцари</h3>
+                    <p>Молоко от коров с гербами, творог с дворянскими титулами и сметана с печатями.</p>
+                    <div class="model-price">от 200 ₽/л</div>
+                    <div class="color-picker">
+                        <h4>Выберите герб:</h4>
+                        <div class="color-options">
+                            <div class="color-option active" style="background-color: #fff9c4;" data-img="https://image.made-in-china.com/2f0j00jpfMFDmyMeoU/Custom-Logo-750ml-Round-Glass-Milk-Juice-Bottle-with-Metal-Lids.webp" data-product="3" title="Молоко"></div>
+                            <div class="color-option" style="background-color: #ffecb3;" data-img="https://ir.ozone.ru/s3/multimedia-6/6359498238.jpg" data-product="3" title="Сметана"></div>
+                            <div class="color-option" style="background-color: #f0f4c3;" data-img="https://main-cdn.sbermegamarket.ru/big1/hlr-system/294/117/015/111/142/8/100029565711b0.jpg" data-product="3" title="Творог"></div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="date">Введите дату рождения:</label>
-                            <input type="date" id="date" name="date" required>
-                        </div>
-
-                        <div class="form-group">
-                            <fieldset>
-                                <legend>Выберите пол</legend>
-                                <label>
-                                    <input type="radio" name="gender" value="male">
-                                    Мужской
-                                </label>
-                                <label>
-                                    <input type="radio" name="gender" value="female" checked>
-                                    Женский
-                                </label>
-                            </fieldset>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Любимый язык программирования (множественный выбор):</label>
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="programming-language" value="cplusplus">
-                                    С++
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="programming-language" value="java">
-                                    Java
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="programming-language" value="csharp">
-                                    C#
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="programming-language" value="javascript">
-                                    JavaScript
-                                </label>
-                                <label>
-                                    <input type="checkbox" name="programming-language" value="python">
-                                    Python
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bio">Многострочное текстовое поле:</label>
-                            <textarea id="bio" name="bio" rows="4"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                Я подтверждаю, что ознакомлен(а) и согласен(а) с условиями обработки персональных данных
-                            </label>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Отправить</button>
-                    </form>
-                </section>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer id="footer">
-        <div class="container">
-            <p>&copy; Ковган Ларион </p>
+    <!-- ========== SECTION: ТАБЛИЦА СРАВНЕНИЯ ========== -->
+    <section class="performance-models section">
+        <div class="section-title">
+            <h2>Сравнение продуктового ранга</h2>
+            <p>Полезность и сезонность наших основных "трофеев" с фермы</p>
+        </div>
+        <!-- Таблица для сравнения характеристик -->
+        <div class="table-container">
+            <table class="performance-table">
+                <thead>
+                    <tr>
+                        <th>Продукт</th>
+                        <th>Сезон</th>
+                        <th>Срок хранения</th>
+                        <th>Главная польза</th>
+                        <th>Витамины</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Помидоры</td><td>Июль-Сентябрь</td><td>2 недели</td><td>Улучшают зрение</td><td>A, C, K</td></tr>
+                    <tr><td>Огурцы</td><td>Июнь-Август</td><td>1 неделя</td><td>Увлажнение</td><td>K, B5</td></tr>
+                    <tr><td>Клубника</td><td>Май-Июль</td><td>3 дня</td><td>Антиоксиданты</td><td>C, B9</td></tr>
+                    <tr><td>Молоко</td><td>Круглый год</td><td>5 дней</td><td>Кальций</td><td>B2, B12, D</td></tr>
+                    <tr><td>Яйца</td><td>Круглый год</td><td>3 недели</td><td>Белок</td><td>B12, D, E</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ========== SECTION: ГАЛЕРЕЯ ========== -->
+    <section id="gallery" class="gallery-section section">
+        <div class="section-title">
+            <h2>Галерея фермы "Клеш Рояль"</h2>
+            <p>Жизнь на нашей весёлой ферме в картинках</p>
+        </div>
+        
+        <div class="gallery-container">
+            <!-- Дорожка слайдера, которая сдвигается горизонтально -->
+            <div class="gallery-slider" id="gallerySlider">
+                <!-- Слайд 1 -->
+                <div class="gallery-slide active">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Поле">
+                    <div class="slide-content">
+                        <h3>Наши королевские поля</h3>
+                        <p>Широкие, солнечные поля, где растут самые отборные овощи.</p>
+                    </div>
+                </div>
+                <!-- Слайд 2 -->
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Коровы">
+                    <div class="slide-content">
+                        <h3>Счастливые коровы-аристократки</h3>
+                        <p>Наши коровы пасутся на зелёных лугах, давая самое вкусное молоко.</p>
+                    </div>
+                </div>
+                <!-- Слайд 3 -->
+                <div class="gallery-slide">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Урожай">
+                    <div class="slide-content">
+                        <h3>Торжественный сбор урожая</h3>
+                        <p>Каждый день мы собираем спелые фрукты и овощи для вашего стола.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Кнопки управления слайдером -->
+            <div class="gallery-controls">
+                <button class="gallery-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Индикаторы (точки) для навигации по слайдам -->
+            <div class="gallery-dots" id="galleryDots">
+                <span class="gallery-dot active" data-slide="0"></span>
+                <span class="gallery-dot" data-slide="1"></span>
+                <span class="gallery-dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION: КАЛЬКУЛЯТОР СТОИМОСТИ ========== -->
+    <section id="calculator" class="section">
+        <div class="section-title">
+            <h2>Калькулятор заказа</h2>
+            <p>Рассчитайте стоимость вашей корзины с фермерскими продуктами</p>
+        </div>
+        
+        <div class="calculator">
+            <!-- Форма калькулятора. Событие 'input' на элементах вызывает пересчёт -->
+            <form class="calculator-form" id="price-calculator">
+                <div class="form-group">
+                    <label for="product">Тип продукта</label>
+                    <select id="product" name="product">
+                        <option value="150">Овощи (150 ₽/кг)</option>
+                        <option value="300">Фрукты (300 ₽/кг)</option>
+                        <option value="200">Молоко (200 ₽/л)</option>
+                        <option value="400">Мёд (400 ₽/бут.)</option>
+                        <option value="500">Сыр (500 ₽/кг)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Количество: <span id="quantityValue">5</span> кг/л</label>
+                    <!-- Ползунок для выбора количества -->
+                    <input type="range" id="quantity" name="quantity" min="1" max="20" value="5">
+                </div>
+                
+                <div class="form-group">
+                    <label for="delivery">Доставка</label>
+                    <select id="delivery" name="delivery">
+                        <option value="0">Самовывоз (бесплатно)</option>
+                        <option value="300">По городу (300 ₽)</option>
+                        <option value="500">За город (500 ₽)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label>Дополнительно</label>
+                    <div class="options-group">
+                        <div class="option-checkbox">
+                            <input type="checkbox" id="gift" name="gift" value="200">
+                            <label for="gift">Подарочная упаковка (+200 ₽)</label>
+                        </div>
+                        <div class="option-checkbox">
+                            <input type="checkbox" id="organic" name="organic" value="150">
+                            <label for="organic">Сертификат "Био" (+150 ₽)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Блок с результатом вычислений -->
+                <div class="calculator-result">
+                    <h3>Итоговая стоимость</h3>
+                    <div class="total-price" id="total-price">1 050 ₽</div>
+                    <p class="hint">(5 кг овощей × 150 ₽ + доставка 0 ₽)</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== SECTION: БЛОГ ========== -->
+    <section id="blog" class="section">
+        <div class="section-title">
+            <h2>Фермерский блог & Новости</h2>
+            <p>Советы, новости и события с нашей фермы</p>
+        </div>
+        
+        <!-- Панель управления блогом: фильтрация и поиск -->
+        <div class="blog-controls">
+            <div class="blog-categories">
+                <!-- Кнопки фильтров. При клике вызывается фильтрация статей -->
+                <button class="category-btn active" data-category="all">Все новости</button>
+                <button class="category-btn" data-category="news">Новости</button>
+                <button class="category-btn" data-category="tips">Советы</button>
+                <button class="category-btn" data-category="events">События</button>
+            </div>
+            <div class="blog-search">
+                <input type="text" id="blog-search" placeholder="Поиск по статьям...">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Контейнер, в который JavaScript вставит карточки статей -->
+        <div class="blog-grid" id="blog-grid">
+            <!-- Статьи будут загружены из script.js -->
+        </div>
+        
+        <!-- Кнопка для подгрузки дополнительных статей -->
+        <div class="blog-load-more">
+            <button class="btn" id="load-more-btn">
+                <span>Загрузить больше статей</span>
+                <div class="loading-spinner"></div>
+            </button>
+        </div>
+    </section>
+
+    <!-- ========== SECTION: КОНТАКТНАЯ ФОРМА ========== -->
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>Свяжитесь с фермером</h2>
+            <p>Оставьте заявку, и наш фермер свяжется с вами для оформления заказа</p>
+        </div>
+        
+        <!-- Основная форма в подвале. Данные отправляются на сервис Formcarry -->
+        <form class="contact-form" id="contact-form" action="https://formcarry.com/s/ВАШ_КЛЮЧ_API" method="POST" accept-charset="UTF-8">
+            <!-- Скрытое поле для защиты от спам-ботов -->
+            <input type="hidden" name="_gotcha" style="display:none !important">
+            
+            <div class="form-group">
+                <label for="name">Ваше имя *</label>
+                <input type="text" id="name" name="name" required minlength="2" placeholder="Иван Петров">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Электронная почта *</label>
+                <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Ваше сообщение *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Напишите ваш вопрос или заказ..." minlength="10"></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Отправить заявку</button>
+            
+            <!-- Сюда будет выводиться сообщение об успехе/ошибке после отправки -->
+            <div class="form-message" id="form-message"></div>
+        </form>
+    </section>
+
+    <!-- ========== FOOTER / ПОДВАЛ САЙТА ========== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo"><i class="fas fa-crown"></i> Клеш<span>Рояль</span></div>
+            <ul class="footer-links">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#products">Урожай</a></li>
+                <li><a href="#calculator">Калькулятор</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="quote-section">
+                <p class="inspiration-quote">
+                    «Лучшее или ничего — даже для морковки!» — Фермер Фёдор
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">© 2023 Весёлая Ферма "Клеш Рояль". Все права защищены.</div>
         </div>
     </footer>
+
+    <!-- ========== MODAL / МОДАЛЬНОЕ ОКНО ========== -->
+    <!-- Всплывающее окно, которое открывается по кнопке "Связь с нами" -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Связь с фермером</h2>
+            <!-- Форма внутри модального окна (копия основной, но с другими id) -->
+            <form id="modal-contact-form" action="https://formcarry.com/s/ВАШ_КЛЮЧ_API" method="POST" accept-charset="UTF-8">
+                <input type="hidden" name="_gotcha" style="display:none !important">
+                <div class="form-group">
+                    <label for="modal-name">Ваше имя *</label>
+                    <input type="text" id="modal-name" name="name" required minlength="2">
+                </div>
+                <div class="form-group">
+                    <label for="modal-email">Электронная почта *</label>
+                    <input type="email" id="modal-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="modal-message">Сообщение *</label>
+                    <textarea id="modal-message" name="message" rows="4" required minlength="10"></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+                <div class="form-message" id="modal-form-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подключение основного скрипта -->
+    <script src="script.js" defer></script>
 </body>
 </html>
-
-
